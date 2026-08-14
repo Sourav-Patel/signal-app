@@ -36,8 +36,8 @@ class _SignalsScreenState extends State<SignalsScreen> {
     try {
       final result = await ApiService.getSignals();
       setState(() {
-        _signals = result.signals;
-        _lastRun = result.lastRun;
+        _signals = result['signals'] as List<Signal>;
+        _lastRun = result['lastRun'] as String;
       });
     } catch (e) {
       setState(() => _error = e.toString());

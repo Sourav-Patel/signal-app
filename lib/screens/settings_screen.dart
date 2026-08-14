@@ -68,7 +68,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),
-                child: const Text('Save & Test Connection', fontWeight: FontWeight.bold),
+                child: const Text('Save & Test Connection', style: TextStyle(fontWeight: FontWeight.bold)),
               ),
             ),
             if (_status.isNotEmpty) ...[

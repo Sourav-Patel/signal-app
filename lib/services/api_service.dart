@@ -29,10 +29,10 @@ class ApiService {
     await http.post(Uri.parse('$url$path')).timeout(const Duration(seconds: 10));
   }
 
-  static Future<({List<Signal> signals, String lastRun})> getSignals() async {
+  static Future<Map<String, dynamic>> getSignals() async {
     final data = await _get('/api/signals');
     final signals = (data['signals'] as List).map((s) => Signal.fromJson(s)).toList();
-    return (signals: signals, lastRun: data['last_run'] ?? 'Never');
+    return {'signals': signals, 'lastRun': data['last_run'] ?? 'Never'};
   }
 
   static Future<List<Position>> getPositions() async {
